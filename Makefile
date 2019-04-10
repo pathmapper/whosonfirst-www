@@ -32,6 +32,8 @@ iamhere:
 blog:
 	$(WOF_MD2HTML) -templates templates/common -templates templates/blog/post -header blog_post_header -footer blog_post_footer -writer fs=./www -mode directory www/blog/
 	$(WOF_MD2IDX) -templates templates/common -templates templates/blog/index -header blog_index_header -footer blog_index_footer www/blog/
+	$(WOF_MD2IDX) -templates templates/common -templates templates/blog/index -header blog_index_header -footer blog_index_footer -mode tags www/blog/
+	$(WOF_MD2IDX) -templates templates/common -templates templates/blog/index -header blog_index_header -footer blog_index_footer -mode authors www/blog/
 	$(WOF_MD2FEED) -templates templates/blog/feed -format rss_20 www/blog/
 	$(WOF_MD2FEED) -templates templates/blog/feed -format atom_10 www/blog/
 
